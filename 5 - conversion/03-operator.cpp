@@ -13,9 +13,9 @@ struct Foo {
     //     return x;
     // }
 
-    operator int() const {
+    operator int&() {
         std::cout<<"operator called\n";
-        return 123;
+        return x;
     }
 };
 
