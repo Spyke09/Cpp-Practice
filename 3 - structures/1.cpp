@@ -25,7 +25,7 @@ public:
     friend Ratio operator+(const Ratio &a, const Ratio &b);
     friend std::ostream& operator<<(std::ostream &os, const Ratio &a);
 
-    Ratio operator++() {
+    Ratio& operator++() {
         num += denom;
         return *this;
     }

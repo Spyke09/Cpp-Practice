@@ -20,4 +20,5 @@ int main() {
     BigInt a = 10;
     a = 12;
     foo(23);
+    [[maybe_unused]]int y = 30.5;
 }
