@@ -1,7 +1,8 @@
 #include <iostream>
 
 struct Foo {
-    //Safe bool idiom.
+    //C++03: Safe bool idiom.
+    //C++11:
     explicit operator bool() {
         return true;
     }
@@ -13,5 +14,5 @@ int main() {
 
     }
 
-    std::cout<< (10 + f)<<"\n";
+    //std::cout<< (10 + f)<<"\n";
 }
