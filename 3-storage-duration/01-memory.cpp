@@ -3,7 +3,8 @@
 
 int main() {
     //переменные умирают внутри фигурных скобок
-    [[maybe_unused]]int x;
+    [[maybe_unused]]int x; // Autimatic storage duration
+                           // "На стеке". 
     {
         [[maybe_unused]] std::vector<int> v(10);
         for (int i = 0; i<10; x++) {
