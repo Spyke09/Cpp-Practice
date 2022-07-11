@@ -3,7 +3,7 @@
 #include <iostream>
 
 struct Greater {
-    bool operator() (int a, int b) const {  //functor
+    bool operator()(int a, int b) const {  //functor
         return a > b;
     }
 };
