@@ -10,6 +10,7 @@ template<>
 void foo(const char &) { // Not 'char', argument should be the same.
     std::cout << "2\n";
 }
+
 void foo(double) {
     std::cout << "3\n";
 }
@@ -21,3 +22,6 @@ int main() {
     foo<double>(10.0);
 }
 
+auto foo3(auto) {
+    return true;
+}
