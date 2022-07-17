@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 int main() {
     // конструктор по умолчанию O(1)

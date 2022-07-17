@@ -9,6 +9,26 @@ void printColection(const T &l) {
     std::cout << '\n';
 }
 
+struct MyKey {
+private:
+    int key;
+public:
+    MyKey(int a): key(a) {}
+    int getKey() const{
+        return key;
+    }
+
+    bool operator<(const MyKey &other) const {
+        return abs((*this).key) < abs(other.key);
+    }
+
+    friend std::ostream& operator<<(std::ostream& strm, const MyKey &a) {
+        strm << a.key;
+        return strm;
+    }
+};
+
+
 int main() {
     std::set<int> s;
     s.insert(5);
@@ -37,4 +57,19 @@ int main() {
 
     [[maybe_unused]] auto a = ms.equal_range(1);
     std::cout << "(" << *a.first << ", " << *a.second << ")\n";
+
+    std::set<MyKey> s2;
+    s2.insert(-2);
+    s2.insert(3);
+    s2.insert(-4);
+    s2.insert(5);
+    printColection(s2);
+
+    auto cmp = [](int a, int b) { return abs(a) < abs(b); };
+    std::set<int, decltype(cmp)> s3(cmp);
+    s3.insert(-2);
+    s3.insert(3);
+    s3.insert(-4);
+    s3.insert(5);
+    printColection(s3);
 }
